@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WASM PDF Engine</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        padding: 2rem;
+        background: #f4f4f5;
+        color: #18181b;
+      }
+      h1 { font-size: 1.5rem; }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+      .controls {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+      button:disabled {
+        background: #93c5fd;
+        cursor: not-allowed;
+      }
+      .spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255,255,255,.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .ui-test {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 4px;
+      }
+      /* An animation to prove main thread is not blocked */
+      .bouncing-ball {
+        width: 30px;
+        height: 30px;
+        background: #16a34a;
+        border-radius: 50%;
+        animation: bounce 0.5s alternate infinite ease-in;
+      }
+      @keyframes bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(50px); }
+      }
+      .ball-container {
+        height: 80px;
+      }
+      #logs {
+        margin-top: 1rem;
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 4px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 WASM PDF Engine</h1>
+      <p>Proves that heavy PDF processing (split, compress, OCR) can be done entirely in the browser without freezing the UI.</p>
+      
+      <div class="ui-test">
+        <p><strong>Main Thread Liveness Check:</strong> If this ball stops bouncing, the main thread is blocked.</p>
+        <div class="ball-container">
+          <div class="bouncing-ball"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input type="file" id="fileInput" accept="application/pdf" />
+      </div>
+      
+      <div class="controls">
+        <button id="btnSplit" disabled>Split Pages 1-5</button>
+        <button id="btnWatermark" disabled>Add Watermark</button>
+        <button id="btnCompress" disabled>Compress PDF</button>
+        <button id="btnOCR" disabled>OCR (First Page)</button>
+      </div>
+
+      <div id="logs">Ready...</div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
