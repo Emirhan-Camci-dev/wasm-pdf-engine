@@ -1,3 +1,6 @@
+**[Pro]([https://github.com/Emirhan-Camci-dev/wasm-pdf-engine-pro))**
+
+
 # BrowserPDF 🚀
 
 > **Blazing fast, client-side only PDF processing engine.**
@@ -40,7 +43,8 @@ For commercial projects, closed-source integrations, and enterprise-grade featur
 
 Ready to integrate BrowserPDF into your commercial application without open-sourcing your codebase?
 
-👉 **[Get your Pro License on Polar.sh](https://polar.sh/)**
+👉 **[Get your Pro License on Polar.sh]([https://polar.sh/](https://buy.polar.sh/polar_cl_M7oNOjFkJ7rc672b6BMdjkrxaWH1N3sYJdFhS1HvSvg))**
+
 
 Your support directly funds the continuous development and maintenance of this project!
 
