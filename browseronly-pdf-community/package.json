@@ -1,0 +1,25 @@
+{
+  "name": "browseronly-pdf",
+  "version": "1.0.0",
+  "description": "High-performance client-side PDF processing engine",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite"
+  },
+  "keywords": ["pdf", "wasm", "client-side", "browser", "dual-license"],
+  "author": "Emirhan CAMCI <byemir@live.com>",
+  "license": "AGPL-3.0-or-later",
+  "type": "commonjs",
+  "dependencies": {
+    "mupdf": "^1.28.0",
+    "pdf-lib": "^1.17.1",
+    "tesseract-wasm": "^0.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  },
+  "workspaces": [
+    "pdf-engine-monorepo/packages/*"
+  ]
+}
